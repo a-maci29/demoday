@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+    <title>YOUR PROFILE</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+
+    
+</head>
+<body>
+<div class="container">
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+
+    <div class="row">
+
+        <!-- ONCE SIGNED IN // USER'S PROFILE WITH SAVED COLLECTIONS -->
+        
+                <% if (user.local.email) { %>
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div>
+        </div>
+        <div class="col-sm-6">
+          <h3>Saved</h3>
+          <ul class="collection"> <!--SAVED EVENTS-->
+          <% for(var i=0; i<userSaved.length; i++) {%>
+            <li class="events">
+              <span><%= messages[i].name %></span>
+              <span><%= messages[i].msg %></span>
+              <span><%= messages[i].thumbUp %></span>
+              <span><i class="" aria-hidden="true"></i></span>
+              <span><i class="" aria-hidden="true"></i></span>
+              <span><i class="" aria-hidden="true"></i></span>
+            </li>
+          <% } %>
+          </ul>
+
+          <h2></h2>
+        <% if (user.local.email) { %>
+          <form action="/messages" method="POST">
+            <input type="text" value="<%= user.local.email %>" name="name">
+            <input type="text" placeholder="message" name="msg">
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <% } %>
+
+</div>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+crossorigin=""></script> <!--the leaflet js will be loaded first-->
+<script src="main.js"></script>
+
+</body>
+</html>
