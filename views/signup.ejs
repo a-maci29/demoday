@@ -7,33 +7,52 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-<div class="col-sm-6 col-sm-offset-3">
+    <div id="header">
+        <nav id="nav">
+        <img src="http://placekitten.com/g/100/100">
+            <p href="/mission">Project Mission</p>
+            <p>Your profile</p>
+            <div class="login">
+                <img src="" alt="">
+                <p>Create an account to save reference points on the map.</p>
+                <p>Login or Signup:</p>
+            
+                    <button href="/signup" type="submit" class="slide_down">Signup</button>
+                    <button href="/login" type="submit" class="slide_down">Login</button>
+                </form>
+    
+            </div>
+        </nav>
+    </div>
 
-    <h1><span class="fa fa-sign-in"></span> Signup</h1>
+    <div id="content"
 
-    <% if (message.length > 0) { %>
-        <div class="alert alert-danger"><%= message %></div>
-    <% } %>
+        <h1><span class="fa fa-sign-in"></span> Signup</h1>
 
-    <!-- LOGIN FORM -->
-    <form action="/signup" method="post">
-        <div class="form-group">
-            <label>Email</label>
-            <input type="text" class="form-control" name="email">
-        </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" class="form-control" name="password">
-        </div>
+        <% if (message.length > 0) { %>
+            <div class="alert alert-danger"><%= message %></div>
+        <% } %>
 
-        <button type="submit" class="btn btn-warning btn-lg">Signup</button>
-    </form>
+        <!-- LOGIN FORM -->
 
-    <hr>
+        <form action="/signup" method="post">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" name="email">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password">
+            </div>
 
-    <p>Already have an account? <a href="/login">Login</a></p>
-    <p>Or go <a href="/">home</a>.</p>
+            <button type="submit" class="btn btn-warning btn-lg">Signup</button>
+        </form>
+
+        <hr>
+
+        <p>Already have an account? <a href="/login">Login</a></p>
+        <p>Or go <a href="/">home</a>.</p>
+        </div
 
 </div>
 </div>

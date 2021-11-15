@@ -2,7 +2,9 @@ html {
   margin: none;
   background-color:  #264653;
 }
-
+a:link {
+  color: #264653;
+}
 body{
   word-wrap:break-word;
   background-color:  #264653;
@@ -67,15 +69,18 @@ button {
   margin: none;
 }
 
-#map {
-  margin: auto;
-  height: 700px;
-  width: 900px;
-  padding: 2em;
-}
 
 #login {
   width: 50%;
   margin: auto;
   text-align: center;
+}
+
+#content {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  background: white;
+  padding: 3em;
+
 }
